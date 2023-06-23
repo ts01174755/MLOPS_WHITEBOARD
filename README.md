@@ -63,7 +63,7 @@
 ### 執行
 - automation 範例
 ```
-$ python3.8 /Users/peiyuwu/Development/pyDev/MLOPS_WHITEBOARD/automation/model_example.py
+$ python3.8 ${HOME}/Development/pyDev/MLOPS_WHITEBOARD/automation/model_example.py
 Output:
 HERE IS CONTROLLER_EXAMPLE.PY TEST
 model_example
@@ -71,7 +71,7 @@ model_example
 
 - 建構環境
 ```
-$ python3.8 /Users/peiyuwu/Development/pyDev/MLOPS_WHITEBOARD/automation/build_all_environment.py
+$ python3.8 ${HOME}/Development/pyDev/MLOPS_WHITEBOARD/automation/build_all_environment.py
 ```
 
 ### 架構定義
