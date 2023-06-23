@@ -1,7 +1,7 @@
 import os
 import time
 import subprocess
-from src.model.docker_cmd import DockerCmd
+from model.docker_command import DockerCommand
 
 class BuildEnvironment:
     @classmethod
@@ -23,20 +23,20 @@ class BuildEnvironment:
     @classmethod
     def build_monodb_environment(cls, RUN, config):
         if RUN == 'images' or RUN == 'all':
-            # dockerCmd pull Images
-            DockerCmd.dockerPull(tag=config.IMAGE_MONGODB_TAG)
-            DockerCmd.dockerPull(tag=config.IMAGE_MONGODB_EXPRESS_TAG)
+            # DockerCommand pull Images
+            DockerCommand.dockerPull(tag=config.IMAGE_MONGODB_TAG)
+            DockerCommand.dockerPull(tag=config.IMAGE_MONGODB_EXPRESS_TAG)
 
         if RUN == 'build' or RUN == 'all':
-            # dockerCmd 建立網路
-            DockerCmd.dockerNetworkRemove(name=f'{config.CONTAINER_MONGO_POSTGRES_NET}')
-            DockerCmd.dockerNetworkCreate(name=f'{config.CONTAINER_MONGO_POSTGRES_NET}')
+            # DockerCommand 建立網路
+            DockerCommand.dockerNetworkRemove(name=f'{config.CONTAINER_MONGO_POSTGRES_NET}')
+            DockerCommand.dockerNetworkCreate(name=f'{config.CONTAINER_MONGO_POSTGRES_NET}')
 
             # subprocess.run(f"mkdir -p {config.CONTAINER_MONGODB_ROOT_MAP}", shell=True)
             # subprocess.run(f"mkdir -p {config.CONTAINER_MONGODB_EXPRESS_ROOT_MAP}", shell=True)
 
-            # dockerCmd run mongodb
-            DockerCmd.dockerRun(
+            # DockerCommand run mongodb
+            DockerCommand.dockerRun(
                 tag=config.IMAGE_MONGODB_TAG,
                 name=config.CONTAINER_MONGODB_NAME,
                 port=config.CONTAINER_MONGODB_PORT_LIST,
@@ -46,8 +46,8 @@ class BuildEnvironment:
                 detach=True, interactive=False, TTY=False
             )
 
-            # dockerCmd run dpage/pgadmin4:6.20
-            DockerCmd.dockerRun(
+            # DockerCommand run dpage/pgadmin4:6.20
+            DockerCommand.dockerRun(
                 tag=config.IMAGE_MONGODB_EXPRESS_TAG,
                 name=config.CONTAINER_MONGODB_EXPRESS_NAME,
                 port=config.CONTAINER_MONGODB_EXPRESS_PORT_LIST,
@@ -66,16 +66,16 @@ class BuildEnvironment:
     @classmethod
     def build_postgres_environment(cls, RUN, config):
         if RUN == 'images' or RUN == 'all':
-            # dockerCmd pull Images
-            DockerCmd.dockerPull(tag=config.IMAGE_POSTGRES_TAG)
-            DockerCmd.dockerPull(tag=config.IMAGE_PGADMIN_TAG)
+            # DockerCommand pull Images
+            DockerCommand.dockerPull(tag=config.IMAGE_POSTGRES_TAG)
+            DockerCommand.dockerPull(tag=config.IMAGE_PGADMIN_TAG)
 
         if RUN == 'build' or RUN == 'all':
             # subprocess.run(f"mkdir -p {config.CONTAINER_POSTGRES_ROOT_MAP}", shell=True)
             # subprocess.run(f"mkdir -p {config.CONTAINER_PGADMIN_ROOT_MAP}", shell=True)
 
-            # dockerCmd run mongodb
-            DockerCmd.dockerRun(
+            # DockerCommand run mongodb
+            DockerCommand.dockerRun(
                 tag=config.IMAGE_POSTGRES_TAG,
                 name=config.CONTAINER_POSTGRES_NAME,
                 port=config.CONTAINER_POSTGRES_PORT_LIST,
@@ -85,8 +85,8 @@ class BuildEnvironment:
                 detach=True, interactive=False, TTY=False
             )
 
-            # dockerCmd run dpage/pgadmin4:6.20
-            DockerCmd.dockerRun(
+            # DockerCommand run dpage/pgadmin4:6.20
+            DockerCommand.dockerRun(
                 tag=config.IMAGE_PGADMIN_TAG,
                 name=config.CONTAINER_PGADMIN_NAME,
                 port=config.CONTAINER_PGADMIN_PORT_LIST,
@@ -100,8 +100,8 @@ class BuildEnvironment:
             os.system(f'open http://localhost:{config.CONTAINER_PGADMIN_PORT_LIST[0].split(":")[0]}')
 
         if RUN == 'OTHER':
-            # dockerCmd postgres:15.2 - 建立資料庫
-            DockerCmd.dockerExec(
+            # DockerCommand postgres:15.2 - 建立資料庫
+            DockerCommand.dockerExec(
                 name=config.CONTAINER_POSTGRES_NAME,
                 cmd=f"psql -U postgres -c \'CREATE DATABASE {config.CONTAINER_POSTGRES_DB1};\'",
                 detach=False, interactive=True, TTY=False
