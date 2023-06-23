@@ -8,11 +8,8 @@ USER_ROOT = f"/Users/{USER_NAME}"
 
 ####################################################################################################
 # 設定 Project 相關資訊
-## Project Name(自動取得資料夾名稱)
-PROJECT_NAME = subprocess.check_output("pwd").decode('utf-8').strip().split('/')[-1]
-
-## Project Path
-PROJECT_ROOT_PATH = f'{USER_ROOT}/Development/pyDev/{PROJECT_NAME}'
+## Project Name(自動 Project 絕對路徑)
+PROJECT_ROOT_PATH = subprocess.check_output("pwd").decode('utf-8').strip()
 
 ## Project Local Package
 PROJECT_LOCAL_PIP_INSTALL_PYTHON_PACKAGE = [
