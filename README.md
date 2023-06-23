@@ -61,11 +61,17 @@
 > 3. 參數化程度越高，復用性越高；
 
 ### 執行
+- automation 範例
 ```
 $ python3.8 /Users/peiyuwu/Development/pyDev/MLOPS_WHITEBOARD/automation/model_example.py
 Output:
 HERE IS CONTROLLER_EXAMPLE.PY TEST
 model_example
+```
+
+- 建構環境
+```
+$ python3.8 /Users/peiyuwu/Development/pyDev/MLOPS_WHITEBOARD/automation/build_all_environment.py
 ```
 
 ### 架構定義
