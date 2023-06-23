@@ -4,8 +4,10 @@ OLD/google_drive.ipynb
 OLD/google_drive.py
 OLD/line.ipynb
 OLD/line.py
+src/controller/__pycache__/*
 src/model/__pycache__/*
-subproject/model/__pycache__/*
 src/model/.DS_Store
+subproject/model/__pycache__/*
 src/.DS_Store
 .DS_Store
+__pycache__/*

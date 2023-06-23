@@ -1,18 +1,17 @@
 print('\n#################### env_config.py ####################')
-
 import subprocess
-from src.model.mongodb import MongoDB
-from src.model.postgres import Postgres
 
 ####################################################################################################
 # 設定使用者相關資訊
 USER_NAME = subprocess.check_output("whoami").decode('utf-8').strip()
 USER_ROOT = f"/Users/{USER_NAME}"
+print(f'USER_NAME: {USER_NAME}')
 
 ####################################################################################################
 # 設定 Project 相關資訊
 ## Project Name(自動取得資料夾名稱)
 PROJECT_NAME = subprocess.check_output("pwd").decode('utf-8').strip().split('/')[-1]
+print(f'PROJECT_NAME: {PROJECT_NAME}')
 
 ## Project Path
 PROJECT_ROOT_PATH = f'{USER_ROOT}/Development/pyDev/{PROJECT_NAME}'
@@ -31,7 +30,7 @@ PROJECT_LOCAL_BREW_INSTALL_PACKAGE = ['smartmontools', 'tree']
 # 設定 Docker 相關資訊
 ## MongoDB & Mongo Express
 IMAGE_MONGODB_TAG = "mongo:5.0.15"      # image tag
-CONTAINER_MONGODB_NAME = "mongodb"      # container name
+CONTAINER_MONGODB_NAME = "mongodb_"      # container name
 CONTAINER_MONGODB_PORT_LIST = ['27017:27017']   # port mapping
 CONTAINER_MONGODB_ROOT = USER_ROOT          # container root
 CONTAINER_MONGODB_ROOT_MAP = PROJECT_ROOT_PATH  # container root mapping
@@ -42,7 +41,7 @@ CONTAINER_MONGO_ENV_DICT = {
 }       # container env
 
 IMAGE_MONGODB_EXPRESS_TAG = "mongo-express:0.54.0"      # image tag
-CONTAINER_MONGODB_EXPRESS_NAME = "mongo_express"        # container name
+CONTAINER_MONGODB_EXPRESS_NAME = "mongo_express_"        # container name
 CONTAINER_MONGODB_EXPRESS_PORT_LIST = ['8081:8081']     # port mapping
 CONTAINER_MONGODB_EXPRESS_ROOT = USER_ROOT        # container root
 CONTAINER_MONGODB_EXPRESS_ROOT_MAP = PROJECT_ROOT_PATH      # container root mapping
@@ -56,7 +55,7 @@ CONTAINER_MONGO_EXPRESS_ENV_DICT = {
 
 ## Postgres & PgAdmin
 IMAGE_POSTGRES_TAG = "postgres:15.2"            # image tag
-CONTAINER_POSTGRES_NAME = "postgres15.2"        # container name
+CONTAINER_POSTGRES_NAME = "postgres15.2_"        # container name
 CONTAINER_POSTGRES_PORT_LIST = ['5432:5432']    # port mapping
 CONTAINER_POSTGRES_ROOT = USER_ROOT        # container root
 CONTAINER_POSTGRES_ROOT_MAP = PROJECT_ROOT_PATH     # container root mapping
@@ -68,7 +67,7 @@ CONTAINER_POSTGRES_ENV_DICT = {
 CONTAINER_POSTGRES_DB1 = "originaldb"       # container db1
 
 IMAGE_PGADMIN_TAG = "dpage/pgadmin4:6.20"       # image tag
-CONTAINER_PGADMIN_NAME = "pgadmin4"         # container name
+CONTAINER_PGADMIN_NAME = "pgadmin4_"         # container name
 CONTAINER_PGADMIN_PORT_LIST = ['5050:80']       # port mapping
 CONTAINER_PGADMIN_ROOT = USER_ROOT          # container root
 CONTAINER_PGADMIN_ROOT_MAP = PROJECT_ROOT_PATH      # container root mapping
