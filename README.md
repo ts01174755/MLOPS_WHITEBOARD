@@ -1,6 +1,6 @@
 # 環境安裝－手動
 ## 安裝 pyenv, pyenv-virtualenv
-- 專案路徑:[YourProjectPath]
+- 專案路徑: [YourProjectPath]
 
 ex: ${HOME}/mlops_whiteboard
 
