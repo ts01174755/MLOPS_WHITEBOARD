@@ -5,13 +5,11 @@ import subprocess
 # 設定使用者相關資訊
 USER_NAME = subprocess.check_output("whoami").decode('utf-8').strip()
 USER_ROOT = f"/Users/{USER_NAME}"
-print(f'USER_NAME: {USER_NAME}')
 
 ####################################################################################################
 # 設定 Project 相關資訊
 ## Project Name(自動取得資料夾名稱)
 PROJECT_NAME = subprocess.check_output("pwd").decode('utf-8').strip().split('/')[-1]
-print(f'PROJECT_NAME: {PROJECT_NAME}')
 
 ## Project Path
 PROJECT_ROOT_PATH = f'{USER_ROOT}/Development/pyDev/{PROJECT_NAME}'
