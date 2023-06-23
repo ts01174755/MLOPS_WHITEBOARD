@@ -60,6 +60,14 @@
 >
 > 3. 參數化程度越高，復用性越高；
 
+### 執行
+```
+$ python3.8 /Users/peiyuwu/Development/pyDev/MLOPS_WHITEBOARD/automation/model_example.py
+Output:
+HERE IS CONTROLLER_EXAMPLE.PY TEST
+model_example
+```
+
 ### 架構定義
 - controller - 定義: 不可參數化的執行步驟，通常是業務邏輯的撰寫處，dataprocess, train...等較複雜的程式碼請寫在這。
 - model - 定義: 可參數化的執行步驟，通常是可規範化的執行框架，例如模型，或是參數化的實體。
