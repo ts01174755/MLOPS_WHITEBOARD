@@ -1,5 +1,9 @@
 # 環境安裝－手動
 ## 安裝 pyenv, pyenv-virtualenv
+- 專案路徑:[YourProjectPath]
+
+ex: ${HOME}/mlops_whiteboard
+
 1. 下載 pyenv, pyenv-virtualenv: 
 
     ```
@@ -8,7 +12,7 @@
 
 2. Clone 專案並指定虛擬環境: 
     ```
-    $ git clone https://github.com/ts01174755/MLOPS_WHITEBOARD.git ~/Development/pyDev/mlops_whiteboard
+    $ git clone https://github.com/ts01174755/MLOPS_WHITEBOARD.git [YourProjectPath]
     ```
 
 3. pyenv 設定
@@ -29,7 +33,7 @@
 
     a. 切到專案目錄: 
     ```
-    $ cd ~/Development/pyDev/mlops_whiteboard
+    $ cd [YourProjectPath]
     ```
 
     b. 先建立virtualenv python=3.8.16並命名為 mlops_whiteboard_python: 
@@ -46,9 +50,9 @@
     
     當你的執行環境是 mlops_whiteboard_python 時，會動態設定PYTHON目錄為當前目錄
     ```
-    $ cd ~/Development/pyDev/mlops_whiteboard
+    $ cd [YourProjectPath]
     $ chmod +x setting_python_root.sh
-    $ echo 'source ${HOME}/Development/pyDev/mlops_whiteboard/setting_python_root.sh' >> ~/.zshrc
+    $ echo 'source [YourProjectPath]/setting_python_root.sh' >> ~/.zshrc
     ```
 
 ## 認識系統
@@ -67,7 +71,7 @@
 ### 執行
 - automation 範例
 ```
-$ python3.8 ${HOME}/Development/pyDev/MLOPS_WHITEBOARD/automation/model_example.py
+$ python3.8 [YourProjectPath]/automation/model_example.py
 Output:
 HERE IS CONTROLLER_EXAMPLE.PY TEST
 model_example
@@ -75,7 +79,7 @@ model_example
 
 - 建構環境(執行前請把 docker 打開)
 ```
-$ python3.8 ${HOME}/Development/pyDev/MLOPS_WHITEBOARD/automation/build_all_environment.py
+$ python3.8 [YourProjectPath]/automation/build_all_environment.py
 ```
 
 ### 架構定義
