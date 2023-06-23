@@ -48,5 +48,37 @@
     ```
 
 ## 認識系統
-### 執行
-- 本系統為MVC架構，
+### 架構定義
+- controller - 定義: 不可參數化的執行步驟，通常是業務邏輯的撰寫處，dataprocess, train...等較複雜的程式碼請寫在這。
+- model - 定義: 可參數化的執行步驟，通常是可規範化的執行框架，例如模型，或是抽象化的執行步驟（設計模式）。
+- env_config - 定義: 設定環境的參數，如果沒有要更改 docker 和 local 的環境參數，這裡可以不用動。
+- automation - 定義: 給予多個controller參數，形成資料執行的pipline。
+    ```
+    .
+    ├── README.md
+    ├── automation      <<詳見automation解釋>>
+    │   ├── build_all_environment.py
+    │   └── data_pipline.py
+    ├── doc
+    ├── env_config.py   <<詳見env_config解釋>>
+    ├── log
+    ├── notebook
+    ├── src
+    │   ├── controller
+    │   │   └── build_environment.py
+    │   └── model
+    │       ├── __init__.py
+    │       ├── docker_cmd.py
+    │       ├── mongodb.py
+    │       └── postgres.py
+    └── subproject
+        ├── controller  <<詳見controller解釋>>
+        │   └── controller_example.py
+        └── model       <<詳見model解釋>>
+            └── model_example.py
+    ```
+### 資料夾定義
+- src - 定義: 共用的套件資料夾
+- subproject - 定義: 特定目的的資料夾
+- doc: 資料存放處
+- log: 執行log存放處
