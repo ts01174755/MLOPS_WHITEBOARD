@@ -43,8 +43,12 @@
     ```
 
 3. 設定根目錄
+    
+    當你的執行環境是 mlops_whiteboard_python 時，會動態設定PYTHON目錄為當前目錄
     ```
-    $ echo -e 'function python() { if [[ $(pyenv version-name) == "mlops_whiteboard_python" ]]; then export PYTHONPATH="$(pwd):${PYTHONPATH}"; fi; command python "$@"; }' >> ~/.zshrc
+    $ cd ~/Development/pyDev/mlops_whiteboard
+    $ chmod +x setting_python_root.sh
+    $ echo 'source ${HOME}/Development/pyDev/mlops_whiteboard/setting_python_root.sh' >> ~/.zshrc
     ```
 
 ## 認識系統
