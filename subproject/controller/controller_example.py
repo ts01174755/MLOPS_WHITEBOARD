@@ -5,11 +5,10 @@ class ControllerExample:
 
     @classmethod
     def controllerExample(cls):
-        model_example = ModelExample()
-        print(model_example)
+        model_example = ModelExample(name='model_example')
+        return model_example
 
 
 if __name__ == "__main__":
-    print('HERE IS CONTROLLER_EXAMPLE.PY TEST')
-    ControllerExample.controllerExample()
+    pass
     

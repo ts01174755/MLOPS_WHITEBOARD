@@ -11,3 +11,4 @@ subproject/model/__pycache__/*
 src/.DS_Store
 .DS_Store
 __pycache__/*
+subproject/controller/__pycache__/*
