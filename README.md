@@ -8,7 +8,7 @@
 
 2. Clone 專案並指定虛擬環境: 
     ```
-    $ git clone https://github.com/ts01174755/MLOPS.git ~/Development/pyDev/mlops_whiteboard
+    $ git clone https://github.com/ts01174755/MLOPS_WHITEBOARD.git ~/Development/pyDev/mlops_whiteboard
     ```
 
 3. pyenv 設定
