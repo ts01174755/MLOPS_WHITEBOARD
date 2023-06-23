@@ -44,7 +44,7 @@
 
 3. 設定根目錄
     ```
-    $ echo 'export PYTHONPATH="${PYTHONPATH}:${HOME}/Development/pyDev/mlops_whiteboard"' >> ~/.zshrc
+    $ echo -e 'function python() { if [[ $(pyenv version-name) == "mlops_whiteboard_python" ]]; then export PYTHONPATH="$(pwd):${PYTHONPATH}"; fi; command python "$@"; }' >> ~/.zshrc
     ```
 
 ## 認識系統
@@ -69,7 +69,7 @@ HERE IS CONTROLLER_EXAMPLE.PY TEST
 model_example
 ```
 
-- 建構環境
+- 建構環境(執行前請把 docker 打開)
 ```
 $ python3.8 ${HOME}/Development/pyDev/MLOPS_WHITEBOARD/automation/build_all_environment.py
 ```
