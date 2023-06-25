@@ -29,7 +29,7 @@ class BuildEnvironment:
 
         if RUN == 'build' or RUN == 'all':
             # DockerCommand 建立網路
-            DockerCommand.dockerNetworkRemove(name=f'{config.CONTAINER_MONGO_POSTGRES_NET}')
+            # DockerCommand.dockerNetworkRemove(name=f'{config.CONTAINER_MONGO_POSTGRES_NET}')
             DockerCommand.dockerNetworkCreate(name=f'{config.CONTAINER_MONGO_POSTGRES_NET}')
 
             # subprocess.run(f"mkdir -p {config.CONTAINER_MONGODB_ROOT_MAP}", shell=True)
@@ -71,6 +71,10 @@ class BuildEnvironment:
             DockerCommand.dockerPull(tag=config.IMAGE_PGADMIN_TAG)
 
         if RUN == 'build' or RUN == 'all':
+            # DockerCommand 建立網路
+            # DockerCommand.dockerNetworkRemove(name=f'{config.CONTAINER_MONGO_POSTGRES_NET}')
+            DockerCommand.dockerNetworkCreate(name=f'{config.CONTAINER_MONGO_POSTGRES_NET}')
+            
             # subprocess.run(f"mkdir -p {config.CONTAINER_POSTGRES_ROOT_MAP}", shell=True)
             # subprocess.run(f"mkdir -p {config.CONTAINER_PGADMIN_ROOT_MAP}", shell=True)
 
