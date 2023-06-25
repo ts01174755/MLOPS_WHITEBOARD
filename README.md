@@ -43,6 +43,7 @@ ex: ${HOME}/mlops_whiteboard
 
     c. 把當前local路徑下的專案環境指向 mlops_whiteboard_python: 
     ```
+    $ pyenv global system 
     $ pyenv local mlops_whiteboard_python
     ```
 

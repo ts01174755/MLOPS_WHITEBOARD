@@ -10,7 +10,7 @@ function chpwd() {
         # Update LAST_PYTHONPATH
         export LAST_PYTHONPATH=""
     fi
-    if [[ "$current_pyenv" == "$1" ]]; then
+    if [[ "$(pyenv version-name)" != "system" ]]; then
         # Add the current directory to PYTHONPATH
         export PYTHONPATH="$(pwd):${PYTHONPATH}"
         # Update LAST_PYTHONPATH
@@ -20,7 +20,7 @@ function chpwd() {
 
 
 # Check if current environment what u want
-if [[ "$(pyenv version-name)" == "$1" ]]; then
+if [[ "$(pyenv version-name)" != "system" ]]; then
     # Set initial PYTHONPATH
     export PYTHONPATH="$(pwd):"
 fi
