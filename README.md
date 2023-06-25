@@ -122,4 +122,5 @@ $ python3.8 [YourProjectPath]/automation/build_all_environment.py
 ## 其他
 ### mongodb 備份與遷移
 - reference:
-[1] [[总结] docker 环境下mongoDB 迁移之备份和恢复实战](https://blog.csdn.net/li396864285/article/details/110450759)
+[1] [修改 docker 容器的目录映射](https://www.cnblogs.com/poloyy/p/13993832.html)
+[2] [docker 环境下mongoDB 迁移之备份和恢复实战](https://blog.csdn.net/li396864285/article/details/110450759)
