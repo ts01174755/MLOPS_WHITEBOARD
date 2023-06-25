@@ -49,7 +49,7 @@ ex: ${HOME}/mlops_whiteboard
 
 3. 設定根目錄
     
-    當你的執行環境是 mlops_whiteboard_python 時，會動態設定PYTHON目錄為當前目錄
+    當你的執行環境不是 system(系統預設) 時，會動態設定PYTHON目錄為當前目錄
     ```
     $ cd [YourProjectPath]
     $ chmod +x setting_python_root.sh
