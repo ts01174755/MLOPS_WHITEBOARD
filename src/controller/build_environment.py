@@ -19,6 +19,8 @@ class BuildEnvironment:
         if RUN == 'brew' or RUN == 'all':
             for pkg_ in brew_pkg_list:
                 subprocess.run(f"brew install {pkg_}", shell=True)
+
+        subprocess.run("pip3 freeze > requirment.txt", shell=True)
     
     @classmethod
     def build_monodb_environment(cls, RUN, config):
