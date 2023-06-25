@@ -117,3 +117,9 @@ $ python3.8 [YourProjectPath]/automation/build_all_environment.py
 - subproject - 定義: 特定目的的資料夾
 - doc: 資料存放處
 - log: 執行log存放處
+
+
+## 其他
+### mongodb 備份與遷移
+- reference:
+[1] [[总结] docker 环境下mongoDB 迁移之备份和恢复实战](https://blog.csdn.net/li396864285/article/details/110450759)
