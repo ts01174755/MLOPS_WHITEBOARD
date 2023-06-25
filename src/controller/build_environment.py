@@ -1,7 +1,7 @@
 import os
 import time
 import subprocess
-from model.docker_command import DockerCommand
+from src.model.docker_command import DockerCommand
 
 class BuildEnvironment:
     @classmethod
