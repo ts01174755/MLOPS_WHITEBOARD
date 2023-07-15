@@ -16,7 +16,7 @@ PROJECT_LOCAL_PIP_INSTALL_PYTHON_PACKAGE = [
     'python-dotenv', 'psycopg2-binary', 'sqlalchemy', 'pymongo', 'fastapi', 'Jinja2==3.1.2',
     'uvicorn[standard]', 'aiofiles', 'requests', 'beautifulsoup4', 'pandas', 'black',
     'setuptools', 'build', 'pdfplumber', 'pypdf2', 'openpyxl',
-    '--upgrade --force-reinstall "git+https://github.com/ytdl-org/youtube-dl.git"', 'selenium', 'jupyter',
+    '--upgrade --force-reinstall "git+https://github.com/ytdl-org/youtube-dl.git"', 'selenium==4.9.1', 'jupyter',
     'google-api-python-client', 'google-auth', 'google-auth-httplib2', 'google-auth-oauthlib', 'oauth2client'
 ]
 PROJECT_LOCAL_BREW_INSTALL_PACKAGE = ['smartmontools', 'tree']
